@@ -7,7 +7,7 @@ services:
     ports:
         - "${APP_PORT:-80}:80"
     volumes:
-       - ".:/public_html"
+       - "./public_html:/public_html"
        - "./conf.d:/etc/nginx/conf.d"
        - "/etc/localtime:/etc/localtime"
 
@@ -18,7 +18,7 @@ services:
     image: php:8.1.5-fpm-alpine
     restart: always
     volumes:
-      - .:/public_html
+      - ./public_html:/public_html
     expose:
       - 9000
     networks:
